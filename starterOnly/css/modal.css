@@ -296,6 +296,7 @@ input[data-error]::after {
 }
 .close {
   position: absolute;
+  z-index: 3;
   right: 15px;
   top: 15px;
   width: 32px;
@@ -523,3 +524,26 @@ footer {
   }
 }
 
+#submit_background {
+  position: absolute;
+  background-color: #232323;
+  z-index: -1;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 0.5s ease;
+}
+
+#submit_background.view {
+  z-index: 2;
+  opacity: 1;
+}
+
+.submit_confirme_button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

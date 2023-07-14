@@ -59,7 +59,7 @@
           name='reserve'
           action='index.html'
           method='get'
-          onsubmit='return validate();'
+          id='form_register'
         >
           <div
             class='formData'>
@@ -176,6 +176,7 @@
               <span class='checkbox-icon'></span>
               Portland</label
             >
+            <div id='is_location'></div>
           </div>
 
           <div
@@ -183,11 +184,10 @@
             <input
               class='checkbox-input'
               type='checkbox'
-              id='checkbox1'
-              required
-              checked
+              id='general_condition'
+              name='general_condition'
             />
-            <label class='checkbox2-label' for='checkbox1'>
+            <label class='checkbox2-label' for='general_condition'>
               <span class='checkbox-icon'></span>
               J'ai lu et accepté les conditions d'utilisation.
             </label>
@@ -198,6 +198,7 @@
               Je Je souhaite être prévenu des prochains évènements.
             </label>
             <br>
+            <div id='is_general_condition'></div>
           </div>
           <input
             class='btn-submit button'
@@ -206,6 +207,7 @@
           />
         </form>
       </div>
+      <div id="submit_background"></div>
     </div>
   </div>
 </main>
@@ -214,6 +216,6 @@
     Copyright 2014 - 2022, GameOn Inc.
   </p>
 </footer>
-<script src='./js/modal.js'></script>
+<script type='module' src='./js/modal.js'></script>
 </body>
 </html>

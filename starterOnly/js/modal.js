@@ -1,23 +1,72 @@
+import { validatorForm } from './functions.js';
+
 function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  let x = document.getElementById('myTopnav');
+  if (x.className === 'topnav') {
+    x.className += ' responsive';
   } else {
-    x.className = "topnav";
+    x.className = 'topnav';
   }
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const modalBg = document.querySelector('.bground');
+const modalBtn = document.querySelectorAll('.modal-btn');
+//const formData = document.querySelectorAll('.formData');
+const closeBtn = document.querySelector('.close');
+const formRegister = document.querySelector('#form_register');
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
+
+// close modal event
+closeBtn.addEventListener('click', closeModal);
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalBg.style.display = 'block';
 }
 
+// close modal form
+function closeModal() {
+  modalBg.style.display = 'none';
+}
 
+function setErrorMessage(htmlElement, message) {
+  const span = document.createElement("span");
+  span.style.color = "red";
+  span.textContent = message;
+  htmlElement.parentNode.appendChild(span);
+  autoRemoveErrorMessage(span);
+}
+
+function autoRemoveErrorMessage(htmlElement) {
+  setTimeout(() => {
+    htmlElement.remove();
+  }, 5000);
+}
+
+// Form Submit
+formRegister.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const validator = validatorForm(e.target, 500);
+
+  if(validator) {
+    const backgroundConfirm = document.getElementById('submit_background');
+    const submitButton = document.createElement('button');
+
+    submitButton.classList.add('btn-submit');
+    submitButton.classList.add('button');
+    submitButton.classList.add('submit_confirme_button');
+    submitButton.textContent = 'Fermer';
+
+    backgroundConfirm.appendChild(submitButton);
+    backgroundConfirm.classList.add('view');
+
+    submitButton.addEventListener('click', () => {
+      closeModal();
+      formRegister.submit();
+    })
+  }
+});
