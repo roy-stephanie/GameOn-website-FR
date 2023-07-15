@@ -1,20 +1,20 @@
 import { isEmail, isNotEmpty, isTournaments } from './Validator.js';
 
-function setBorderError(htmlElement) {
+const setBorderError = (htmlElement) => {
   htmlElement.style.borderColor = 'red';
 }
 
-function unsetBorderError(htmlElement) {
+const unsetBorderError = (htmlElement) => {
   htmlElement.style.borderColor = '#000';
 }
 
-function autoRemoveErrorMessage(htmlElement, timeAutoRemove) {
+const autoRemoveErrorMessage = (htmlElement, timeAutoRemove)=> {
   setTimeout(() => {
     htmlElement.remove();
   }, timeAutoRemove);
 }
 
-function setErrorMessage(htmlElement, message, timeAutoRemove) {
+const setErrorMessage = (htmlElement, message, timeAutoRemove)=> {
   const span = document.createElement("span");
   span.style.color = "red";
   span.textContent = message;

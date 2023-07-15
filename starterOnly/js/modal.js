@@ -14,27 +14,13 @@ modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
 closeBtn.addEventListener('click', closeModal);
 
 // launch modal form
-function launchModal() {
+const launchModal = () => {
   modalBg.style.display = 'block';
 }
 
 // close modal form
-function closeModal() {
+const closeModal = () => {
   modalBg.style.display = 'none';
-}
-
-function setErrorMessage(htmlElement, message) {
-  const span = document.createElement("span");
-  span.style.color = "red";
-  span.textContent = message;
-  htmlElement.parentNode.appendChild(span);
-  autoRemoveErrorMessage(span);
-}
-
-function autoRemoveErrorMessage(htmlElement) {
-  setTimeout(() => {
-    htmlElement.remove();
-  }, 5000);
 }
 
 // Form Submit
