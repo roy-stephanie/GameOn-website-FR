@@ -8,6 +8,7 @@ const unsetBorderError = (htmlElement) => {
   htmlElement.style.borderColor = '#000';
 }
 
+// Auto Remove Alert Message
 const autoRemoveErrorMessage = (htmlElement, timeAutoRemove)=> {
   setTimeout(() => {
     htmlElement.remove();
@@ -22,6 +23,7 @@ const setErrorMessage = (htmlElement, message, timeAutoRemove)=> {
   autoRemoveErrorMessage(span, timeAutoRemove);
 }
 
+// Full Validator
 export const validatorForm = (form, timeAutoRemove= 5000) => {
   let stateFirst = false,
     stateLast = false,
