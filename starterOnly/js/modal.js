@@ -1,14 +1,5 @@
 import { validatorForm } from './functions.js';
 
-function editNav() {
-  let x = document.getElementById('myTopnav');
-  if (x.className === 'topnav') {
-    x.className += ' responsive';
-  } else {
-    x.className = 'topnav';
-  }
-}
-
 // DOM Elements
 const modalBg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
