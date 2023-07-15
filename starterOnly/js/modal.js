@@ -3,15 +3,8 @@ import { validatorForm } from './functions.js';
 // DOM Elements
 const modalBg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
-//const formData = document.querySelectorAll('.formData');
 const closeBtn = document.querySelector('.close');
 const formRegister = document.querySelector('#form_register');
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
-
-// close modal event
-closeBtn.addEventListener('click', closeModal);
 
 // launch modal form
 const launchModal = () => {
@@ -22,6 +15,12 @@ const launchModal = () => {
 const closeModal = () => {
   modalBg.style.display = 'none';
 }
+
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener('click', launchModal));
+
+// close modal event
+closeBtn.addEventListener('click', closeModal);
 
 // Form Submit
 formRegister.addEventListener('submit', (e) => {
