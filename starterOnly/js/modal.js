@@ -1,4 +1,4 @@
-import { validatorForm } from './functions.js';
+import { disableButtonForNotSpamSubmit, validatorForm } from './functions.js';
 
 // DOM Elements
 const modalBg = document.querySelector('.bground');
@@ -26,7 +26,7 @@ closeBtn.addEventListener('click', closeModal);
 formRegister.addEventListener('submit', (e) => {
   e.preventDefault();
   // Form Validator
-  const validator = validatorForm(e.target, 500);
+  const validator = validatorForm(e.target);
 
   if(validator) {
     // Create Close Button
@@ -46,5 +46,7 @@ formRegister.addEventListener('submit', (e) => {
       closeModal();
       formRegister.submit();
     })
+  } else {
+    disableButtonForNotSpamSubmit();
   }
 });
