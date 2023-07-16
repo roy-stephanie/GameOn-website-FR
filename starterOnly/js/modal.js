@@ -32,6 +32,14 @@ formRegister.addEventListener('submit', (e) => {
     // Create Close Button
     const backgroundConfirm = document.getElementById('submit_background');
     const submitButton = document.createElement('button');
+    const divMessageFormValid = document.createElement('div');
+
+    divMessageFormValid.style.position = 'absolute';
+    divMessageFormValid.style.top = '50%';
+    divMessageFormValid.style.left = '50%';
+    divMessageFormValid.style.transform = 'translate(-50%, -50%)';
+    divMessageFormValid.style.textAlign = 'center';
+    divMessageFormValid.textContent = 'Merci pour votre inscription';
 
     submitButton.classList.add('btn-submit');
     submitButton.classList.add('button');
@@ -39,6 +47,7 @@ formRegister.addEventListener('submit', (e) => {
     submitButton.textContent = 'Fermer';
 
     // View Button
+    backgroundConfirm.appendChild(divMessageFormValid);
     backgroundConfirm.appendChild(submitButton);
     backgroundConfirm.classList.add('view');
     // Add Event Listener for Close Modal and Form Submit
